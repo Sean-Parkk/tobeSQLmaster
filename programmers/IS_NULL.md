@@ -8,7 +8,7 @@ WHERE NAME IS NULL;
 ```
 
 ## IS NOT NULL
-date: 20/02/05
+date: 20/02/05  
 [문제 보기](https://programmers.co.kr/learn/courses/30/lessons/59407)  
 ```SQL
 SELECT ANIMAL_ID

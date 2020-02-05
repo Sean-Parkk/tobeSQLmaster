@@ -1,0 +1,44 @@
+## 없어진 기록 찾기(LEFT JOIN, WEHRE A.KEY IS NULL)
+date: 20/02/05  
+[문제 보기](https://programmers.co.kr/learn/courses/30/lessons/59042)  
+```SQL
+SELECT o.ANIMAL_ID, o.NAME
+FROM ANIMAL_OUTS AS o LEFT JOIN ANIMAL_INS AS i
+ON o.ANIMAL_ID = i.ANIMAL_ID
+WHERE i.ANIMAL_ID IS NULL;
+```
+
+
+## LEFT JOIN + WHERE
+date: 20/02/05  
+[문제 보기](https://programmers.co.kr/learn/courses/30/lessons/59043)  
+```SQL
+SELECT i.ANIMAL_ID, i.NAME
+FROM ANIMAL_INS AS i LEFT JOIN ANIMAL_OUTS AS o
+ON i.ANIMAL_ID = o.ANIMAL_ID
+WHERE i.DATETIME > o.DATETIME
+ORDER BY i.DATETIME;
+```
+
+## LEFT JOIN + WHERE + ORDER BY + LIMIT
+date: 20/02/05  
+[문제 보기](https://programmers.co.kr/learn/courses/30/lessons/59044)
+```SQL
+SELECT i.NAME, i.DATETIME
+FROM ANIMAL_INS AS i LEFT JOIN ANIMAL_OUTS AS o
+ON i.ANIMAL_ID = o.ANIMAL_ID
+WHERE o.ANIMAL_ID IS NULL
+ORDER BY DATETIME
+LIMIT 3;
+```
+
+## LEFT JOIN + WHERE + ORDER BY
+date: 20/02/05  
+[문제 보기](https://programmers.co.kr/learn/courses/30/lessons/59045)
+```SQL
+SELECT o.ANIMAL_ID, o.ANIMAL_TYPE, o.NAME
+FROM ANIMAL_OUTS AS o LEFT JOIN ANIMAL_INS AS i
+ON o.ANIMAL_ID = i.ANIMAL_ID
+WHERE o.SEX_UPON_OUTCOME != i.SEX_UPON_INTAKE
+ORDER BY o.ANIMAL_ID
+```

@@ -118,7 +118,7 @@ UPPER(SUBSTR(CITY,-1,1)) IN('A', 'E', 'I', 'O', 'U');
 ## Weather Observation Station 9
 date: 20/02/08  
 Query the list of CITY names from STATION that do not start with vowels. Your result cannot contain duplicates.  
-[문제 보기]https://www.hackerrank.com/challenges/weather-observation-station-9/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen)  
+[문제 보기](https://www.hackerrank.com/challenges/weather-observation-station-9/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen)  
 ```SQL
 SELECT DISTINCT CITY
 FROM STATION
@@ -171,7 +171,7 @@ ORDER BY SUBSTR(NAME, -3, 3), ID;
 ## Employee Names
 date: 20/02/08  
 Write a query that prints a list of employee names (i.e.: the name attribute) from the Employee table in alphabetical order.
-where employee_id is an employee's ID number, name is their name, months is the total number of months they've been working for the company, and salary is their monthly salary.
+where employee_id is an employee's ID number, name is their name, months is the total number of months they've been working for the company, and salary is their monthly salary.  
 [문제 보기](https://www.hackerrank.com/challenges/name-of-employees/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen)  
 ```SQL
 SELECT name

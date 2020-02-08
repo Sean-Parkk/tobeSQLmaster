@@ -1,3 +1,16 @@
+# SELECT의 기본적인 활용을 연습하기
+* 난이도 자체는 쉬웠음
+* 알게 된 것
+  * SUBSTR
+    * 엑셀에서 LEFT, RIGHT, MID 정말 많이 쓰는데 SQL에선 SUBSTR이 인덱스 참조엔 종결인듯
+    * 특히 끝에서부터 찾는 SUBSTR(col,**-1**,n) 은 파이썬과 동일해서 편했음
+  * 와일드카드
+    * SQL에서 와일드카드론 %를 사용
+    * (TMI) 엑셀에선 와일드카드로 * 사용 (0,?등 도 있지만 주로 *를 썼음)
+* 그 외
+  * 나머지 구문들은 다 아는 내용이어서 따로 구글링한 것은 없었음
+  * 그래도 역시 쿼리 날려보는건 다다익선
+
 ## Revising the Select Query ID
 date: 20/02/08  
 Query all columns for all American cities in CITY with populations larger than 100000. The CountryCode for America is USA.  

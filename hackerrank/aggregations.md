@@ -17,7 +17,8 @@
   * POWER(val, n)
     * val의 n제곱
   * SQRT(n)
-    * n
+    * n의 제곱근
+    
 ## Revising Aggregations - The Count Function
 date: 20/02/10  
 Query a count of the number of cities in CITY having a Population larger than 100,000.  

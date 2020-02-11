@@ -18,7 +18,7 @@ WHERE CO.CONTINENT = 'Africa';
 ```
 
 ## Average Population of Each Continent
-date: 20/02/11
+date: 20/02/11  
 Given the CITY and COUNTRY tables, query the names of all the continents (COUNTRY.Continent) and their respective average city populations (CITY.Population) rounded down to the nearest integer.
 Note: CITY.CountryCode and COUNTRY.Code are matching key columns.  
 [문제 보기](https://www.hackerrank.com/challenges/average-population-of-each-continent/problem?h_r=next-challenge&h_v=zen)  
@@ -30,7 +30,7 @@ GROUP BY CO.CONTINENT;
 ```
 
 ## 
-date: 
+date:  
   
 [문제 보기]()  
 ```SQL
@@ -38,7 +38,7 @@ date:
 ```
 
 ## 
-date: 
+date:  
   
 [문제 보기]()  
 ```SQL
@@ -46,7 +46,7 @@ date:
 ```
 
 ## 
-date: 
+date:  
   
 [문제 보기]()  
 ```SQL
@@ -54,7 +54,7 @@ date:
 ```
 
 ## 
-date: 
+date:  
   
 [문제 보기]()  
 ```SQL
@@ -62,7 +62,7 @@ date:
 ```
 
 ## 
-date: 
+date:  
   
 [문제 보기]()  
 ```SQL
@@ -70,7 +70,7 @@ date:
 ```
 
 ## 
-date: 
+date:  
   
 [문제 보기]()  
 ```SQL
@@ -78,7 +78,7 @@ date:
 ```
 
 ## 
-date: 
+date:  
   
 [문제 보기]()  
 ```SQL
@@ -86,7 +86,7 @@ date:
 ```
 
 ## 
-date: 
+date:  
   
 [문제 보기]()  
 ```SQL
@@ -94,7 +94,7 @@ date:
 ```
 
 ## 
-date: 
+date:  
   
 [문제 보기]()  
 ```SQL
@@ -102,7 +102,23 @@ date:
 ```
 
 ## 
-date: 
+date:  
+  
+[문제 보기]()  
+```SQL
+
+```
+
+## 
+date:  
+  
+[문제 보기]()  
+```SQL
+
+```
+
+## 
+date:  
   
 [문제 보기]()  
 ```SQL

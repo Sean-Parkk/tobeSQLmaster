@@ -47,12 +47,24 @@ ON S.MARKS >= G.MIN_MARK AND S.MARKS <= G.MAX_MARK
 ORDER BY G.GRADE DESC, S.NAME, S.MARKS ASC;
 ```
 
-## 
-date:  
-  
-[문제 보기]()  
+## Top Competitors
+date:20/02/13  
+링크 참고  
+12줄짜리 쿼리문... 지금까지 쓴 쿼리 중 가장 김 ㄷㄷ..  
+[문제 보기](https://www.hackerrank.com/challenges/full-score/problem)  
 ```SQL
-
+SELECT S.hacker_id, H.name
+FROM Submissions AS S 
+INNER JOIN Hackers AS H
+ON S.Hacker_id = H.hacker_id 
+INNER JOIN Challenges AS C 
+ON S.challenge_id = C.challenge_id
+INNER JOIN Difficulty AS D
+ON C.difficulty_level = D.difficulty_level
+WHERE S.score = D.score AND C.difficulty_level = D.difficulty_level
+GROUP BY H.hacker_id, H.name
+HAVING COUNT(S.hacker_id) > 1
+ORDER BY COUNT(S.hacker_id) DESC, S.hacker_id ASC;
 ```
 
 ## 
@@ -78,60 +90,3 @@ date:
 ```SQL
 
 ```
-
-## 
-date:  
-  
-[문제 보기]()  
-```SQL
-
-```
-
-## 
-date:  
-  
-[문제 보기]()  
-```SQL
-
-```
-
-## 
-date:  
-  
-[문제 보기]()  
-```SQL
-
-```
-
-## 
-date:  
-  
-[문제 보기]()  
-```SQL
-
-```
-
-## 
-date:  
-  
-[문제 보기]()  
-```SQL
-
-```
-
-## 
-date:  
-  
-[문제 보기]()  
-```SQL
-
-```
-
-## 
-date:  
-  
-[문제 보기]()  
-```SQL
-
-```
-

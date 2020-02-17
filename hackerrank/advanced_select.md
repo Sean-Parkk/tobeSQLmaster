@@ -1,4 +1,4 @@
-### The PADS
+## The PADS
 date: 20/02/17
 링크 참고  
 [문제 보기](https://www.hackerrank.com/challenges/the-pads/problem)  

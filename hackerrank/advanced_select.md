@@ -21,7 +21,7 @@ GROUP BY Occupation
 ORDER BY O;
 ```
 
-## 
+## Type of Triangle
 date: 20/02/21  
 삼각형의 세 변의 길이가 A, B, C로 주어졌을 때,  
 삼각형인지 판별하고 삼각형 종류 구별하기  

@@ -20,3 +20,18 @@ FROM OCCUPATIONS
 GROUP BY Occupation
 ORDER BY O;
 ```
+
+## 
+date: 20/02/21  
+삼각형의 세 변의 길이가 A, B, C로 주어졌을 때,  
+삼각형인지 판별하고 삼각형 종류 구별하기  
+[문제 보기](https://www.hackerrank.com/challenges/what-type-of-triangle/problem)
+
+```SQL
+SELECT 
+CASE WHEN A + B <= C OR A + C <= B OR B + C <= A THEN 'Not A Triangle'
+WHEN A = B AND B = C THEN 'Equilateral' 
+WHEN A = B OR B = C OR A = C THEN 'Isosceles'
+ELSE 'Scalene' END
+FROM TRIANGLES;
+```

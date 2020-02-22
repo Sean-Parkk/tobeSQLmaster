@@ -35,3 +35,15 @@ WHEN A = B OR B = C OR A = C THEN 'Isosceles'
 ELSE 'Scalene' END
 FROM TRIANGLES;
 ```
+
+## Binary Tree Nodes
+date:20/02/22  
+서브쿼리 활용  
+[문제 보기](https://www.hackerrank.com/challenges/binary-search-tree-1/problem)
+```SQL
+SELECT N, 
+IF(P IS NULL, 'Root', 
+   IF((SELECT COUNT(*) FROM BST WHERE B.N = P) > 0, 'Inner', 'Leaf'))
+FROM BST AS B
+ORDER BY N;
+```

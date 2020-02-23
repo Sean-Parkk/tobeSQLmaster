@@ -67,12 +67,16 @@ HAVING COUNT(S.hacker_id) > 1
 ORDER BY COUNT(S.hacker_id) DESC, S.hacker_id ASC;
 ```
 
-## 
-date:  
-  
-[문제 보기]()  
+## Asian Population
+date:20/02/23  
+Given the CITY and COUNTRY tables, query the sum of the populations of all cities where the CONTINENT is 'Asia'.  
+[문제 보기](https://www.hackerrank.com/challenges/asian-population/problem)  
 ```SQL
-
+SELECT SUM(CITY.POPULATION)
+FROM CITY 
+LEFT JOIN COUNTRY
+ON CITY.COUNTRYCODE = COUNTRY.CODE
+WHERE COUNTRY.CONTINENT = 'Asia';
 ```
 
 ## 

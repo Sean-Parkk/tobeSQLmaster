@@ -202,3 +202,20 @@ FROM Employee
 WHERE salary > 2000 AND months < 10
 ORDER BY employee_id;
 ```
+
+## Weather Observation Station 5
+date: 20/02/24  
+Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths (i.e.: number of characters in the name).  
+If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically.    
+[문제 보기](https://www.hackerrank.com/challenges/weather-observation-station-5/problem)  
+```SQL
+SELECT CITY, LENGTH(CITY)
+FROM STATION
+ORDER BY LENGTH(CITY), CITY
+LIMIT 1;
+
+SELECT CITY, LENGTH(CITY)
+FROM STATION
+ORDER BY LENGTH(CITY) DESC, CITY
+LIMIT 1;
+```

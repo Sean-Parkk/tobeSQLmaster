@@ -18,7 +18,21 @@
     * val의 n제곱
   * SQRT(n)
     * n의 제곱근
-    
+
+## Top Earners
+data: 20/02/25  
+We define an employee's total earnings to be their monthly salary * months worked, and the maximum total earnings to be the maximum total earnings for any employee in the Employee table.  
+Write a query to find the maximum total earnings for all employees as well as the total number of employees who have maximum total earnings.  
+Then print these values as 2 space-separated integers.  
+[문제 보기](https://www.hackerrank.com/challenges/earnings-of-employees/problem)  
+```SQL
+SELECT Months * Salary, COUNT(*)
+FROM Employee
+GROUP BY 1
+ORDER BY 1 DESC
+LIMIT 1;
+```
+
 ## Revising Aggregations - The Count Function
 date: 20/02/10  
 Query a count of the number of cities in CITY having a Population larger than 100,000.  

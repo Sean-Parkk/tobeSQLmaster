@@ -1,7 +1,10 @@
 # To_be_SQLmaster
 * SQL쿼리 작성 연습하기
   * [HackerRank](https://www.hackerrank.com/domains/sql?filters%5Bstatus%5D%5B%5D=unsolved&badge_type=sql) - 진행중
+   * SQL 레벨 5 뱃지 획득!!!
+   * ![image](hackerrank/sqlbadge.png)
   * [Programmers](https://programmers.co.kr/learn/challenges?tab=sql_practice_kit) - 1문제 빼고 완료 (20/02/06)
+
 - - - -
 ## HackerRank 공부 요약
 

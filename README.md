@@ -52,3 +52,23 @@
   * SQL 문제들을 풀어보면 SELECT에서 WEHRE, HAVING, ORDER 관련 문제가 많음
     * 간혹 JOIN 나오는 정도?
   * 실무에서는 어느정도의 쿼리를 자주 사용하는지 궁금함.
+  
+  
+  - - - -
+  ## 기억해야할 쿼리
+- FLOOR
+  - 양수: 소수점 버림
+  - 음수: 소수점 버리며 정수부-1 내림
+  - 소수부분 0: 변화 없음
+- TRIM
+  - 내림
+- ROUND
+- CEIL
+  - 올림
+- IFNULL(COL, SUBSTR)
+  - NULL일 경우, 치환
+- SET @VAR = 1 변수 선언
+- A AND (B OR C)
+  - 계산 순서상 AND가 OR을 앞섬
+- SELECT절에서 CASE WHEN 시, ELSE가 없으면 조건에 만족하지 않는 값은 NULL로 반환
+  

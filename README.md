@@ -69,10 +69,12 @@
   - 음수: 소수점 버리며 정수부-1 내림
   - 소수부분 0: 변화 없음
 - TRIM
-  - 내림
+  - 공백 지우기
 - ROUND
 - CEIL
   - 올림
+- TRUNCATE
+  - 내림
 - IFNULL(COL, SUBSTR)
   - NULL일 경우, 치환
 - SET @VAR = 1 변수 선언

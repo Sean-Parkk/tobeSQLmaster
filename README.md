@@ -1,20 +1,21 @@
 
 
 # To_be_SQLmaster
-* SQL쿼리 작성 연습하기
-   * 데이터 분석을 위한 SQL레시피(도서) 공부
-      * 실무에서의 쿼리 능력 향상 위해 진행
-      * ![image](https://www.hanbit.co.kr/data/books/B8585882565_l.jpg)
-      * [책 링크](https://www.hanbit.co.kr/store/books/look.php?p_code=B8585882565)
-   * [HackerRank](https://www.hackerrank.com/domains/sql?filters%5Bstatus%5D%5B%5D=unsolved&badge_type=sql) - 완료
-      * SQL 레벨 5 뱃지 획득!!!
-      * ![image](hackerrank/sqlbadge.png)
-   * [Programmers](https://programmers.co.kr/learn/challenges?tab=sql_practice_kit) - 1문제 빼고 완료 (20/02/06)
+## SQL쿼리 작성 연습하기
+* 데이터 분석을 위한 SQL레시피(도서) 공부
+  * 실무에서의 쿼리 능력 향상 위해 진행
+  * ![image](https://www.hanbit.co.kr/data/books/B8585882565_l.jpg)
+  * [책 링크](https://www.hanbit.co.kr/store/books/look.php?p_code=B8585882565)
+* [HackerRank](https://www.hackerrank.com/domains/sql?filters%5Bstatus%5D%5B%5D=unsolved&badge_type=sql) - 완료
+  * SQL 레벨 5 뱃지 획득!!!
+  * ![image](hackerrank/sqlbadge.png)
+* [Programmers](https://programmers.co.kr/learn/challenges?tab=sql_practice_kit) - 1문제 빼고 완료 (20/02/06)
 
 - - - -
 
+## 공부 요약
 
-## HackerRank 공부 요약
+### HackerRank 공부 요약
 
 #### 1) SELECT의 기본적인 활용을 연습하기
 * 난이도 자체는 쉬웠음
@@ -50,7 +51,7 @@
   * n의 제곱근  
 
 - - - -
-## Programmers 공부 요약
+### Programmers 공부 요약
 * ~~몇 문제 빼고는 막히지 않고 한 번에 풀었음~~
 * 모든 문제 클리어
   * 못풀고있던 LV.4도 모두 풀었다.
@@ -63,7 +64,7 @@
   
   
   - - - -
-  ## 기억해야할 쿼리
+## 기억해야할 쿼리
 - FLOOR
   - 양수: 소수점 버림
   - 음수: 소수점 버리며 정수부-1 내림

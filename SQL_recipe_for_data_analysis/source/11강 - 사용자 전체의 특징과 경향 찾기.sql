@@ -522,4 +522,212 @@ FROM RFM_FLAG
 GROUP BY RFM_INDEX
 ORDER BY RFM_INDEX;
 
-        
+### 사용자를 1차원으로 구분하기
+WITH
+	PURCHASE_LOG AS (
+		SELECT
+			USER_ID
+            , AMOUNT
+            , SUBSTR(STAMP, 1, 10) AS DT
+		FROM ACTION_LOG
+        WHERE ACTION = 'PURCHASE'
+	)
+    , USER_RFM AS (
+		SELECT
+			USER_ID
+            , MAX(DT) AS RECENT_DATE
+            , DATEDIFF(CURRENT_DATE(), MAX(DT)) AS RECENCY
+            , COUNT(DT) AS FREQUENCY
+            , SUM(AMOUNT) AS MONETARY
+		FROM PURCHASE_LOG
+        GROUP BY USER_ID
+	)
+	, USER_RFM_RANK AS (
+		SELECT
+			USER_ID
+            , RECENT_DATE
+            , RECENCY
+            , FREQUENCY
+            , MONETARY
+            , CASE
+				WHEN RECENCY < 14 THEN 5
+                WHEN RECENCY < 28 THEN 4
+                WHEN RECENCY < 60 THEN 3
+                WHEN RECENCY < 90 THEN 2
+                ELSE 1
+			  END AS R
+            , CASE
+				WHEN 20 <= FREQUENCY THEN 5
+                WHEN 10 <= FREQUENCY THEN 5
+                WHEN 5 <= FREQUENCY THEN 5
+                WHEN 2 <= FREQUENCY THEN 5
+                ELSE 1
+			  END AS F
+			, CASE
+				WHEN 3000000 <= MONETARY THEN 5
+                WHEN 1000000 <= MONETARY THEN 5
+                WHEN 300000 <= MONETARY THEN 5
+                WHEN 50000 <= MONETARY THEN 5
+                ELSE 1
+			  END AS M
+		FROM USER_RFM
+	)
+    , MST_RFM_INDEX AS (
+		SELECT 1 AS RFM_INDEX
+        UNION ALL SELECT 2 AS RFM_INDEX
+        UNION ALL SELECT 3 AS RFM_INDEX
+        UNION ALL SELECT 4 AS RFM_INDEX
+        UNION ALL SELECT 5 AS RFM_INDEX
+	)
+    , RFM_FLAG AS (
+		SELECT
+			M.RFM_INDEX
+            , CASE WHEN M.RFM_INDEX = R.R THEN 1 ELSE 0 END AS R_FLAG
+            , CASE WHEN M.RFM_INDEX = R.F THEN 1 ELSE 0 END AS F_FLAG
+            , CASE WHEN M.RFM_INDEX = R.M THEN 1 ELSE 0 END AS M_FLAG
+		FROM MST_RFM_INDEX AS M
+			CROSS JOIN
+				USER_RFM_RANK AS R
+	)
+SELECT
+	R + F + M AS TOTAL_RANK
+    , R, F, M
+    , COUNT(USER_ID) AS COUNT
+FROM USER_RFM_RANK
+GROUP BY R, F, M
+ORDER BY TOTAL_RANK DESC, R DESC, F DESC, M DESC;
+
+### 종합 랭크별로 사용자 집계
+WITH
+	PURCHASE_LOG AS (
+		SELECT
+			USER_ID
+            , AMOUNT
+            , SUBSTR(STAMP, 1, 10) AS DT
+		FROM ACTION_LOG
+        WHERE ACTION = 'PURCHASE'
+	)
+    , USER_RFM AS (
+		SELECT
+			USER_ID
+            , MAX(DT) AS RECENT_DATE
+            , DATEDIFF(CURRENT_DATE(), MAX(DT)) AS RECENCY
+            , COUNT(DT) AS FREQUENCY
+            , SUM(AMOUNT) AS MONETARY
+		FROM PURCHASE_LOG
+        GROUP BY USER_ID
+	)
+	, USER_RFM_RANK AS (
+		SELECT
+			USER_ID
+            , RECENT_DATE
+            , RECENCY
+            , FREQUENCY
+            , MONETARY
+            , CASE
+				WHEN RECENCY < 14 THEN 5
+                WHEN RECENCY < 28 THEN 4
+                WHEN RECENCY < 60 THEN 3
+                WHEN RECENCY < 90 THEN 2
+                ELSE 1
+			  END AS R
+            , CASE
+				WHEN 20 <= FREQUENCY THEN 5
+                WHEN 10 <= FREQUENCY THEN 5
+                WHEN 5 <= FREQUENCY THEN 5
+                WHEN 2 <= FREQUENCY THEN 5
+                ELSE 1
+			  END AS F
+			, CASE
+				WHEN 3000000 <= MONETARY THEN 5
+                WHEN 1000000 <= MONETARY THEN 5
+                WHEN 300000 <= MONETARY THEN 5
+                WHEN 50000 <= MONETARY THEN 5
+                ELSE 1
+			  END AS M
+		FROM USER_RFM
+	)
+    , MST_RFM_INDEX AS (
+		SELECT 1 AS RFM_INDEX
+        UNION ALL SELECT 2 AS RFM_INDEX
+        UNION ALL SELECT 3 AS RFM_INDEX
+        UNION ALL SELECT 4 AS RFM_INDEX
+        UNION ALL SELECT 5 AS RFM_INDEX
+	)
+    , RFM_FLAG AS (
+		SELECT
+			M.RFM_INDEX
+            , CASE WHEN M.RFM_INDEX = R.R THEN 1 ELSE 0 END AS R_FLAG
+            , CASE WHEN M.RFM_INDEX = R.F THEN 1 ELSE 0 END AS F_FLAG
+            , CASE WHEN M.RFM_INDEX = R.M THEN 1 ELSE 0 END AS M_FLAG
+		FROM MST_RFM_INDEX AS M
+			CROSS JOIN
+				USER_RFM_RANK AS R
+	)
+SELECT
+	R + F + M AS TOTAL_RANK
+    , COUNT(USER_ID) AS COUNT
+FROM USER_RFM_RANK
+GROUP BY TOTAL_RANK
+ORDER BY TOTAL_RANK DESC;
+
+### 2차원으로 사용자 인식하기
+WITH
+	PURCHASE_LOG AS (
+		SELECT
+			USER_ID
+            , AMOUNT
+            , SUBSTR(STAMP, 1, 10) AS DT
+		FROM ACTION_LOG
+        WHERE ACTION = 'PURCHASE'
+	)
+    , USER_RFM AS (
+		SELECT
+			USER_ID
+            , MAX(DT) AS RECENT_DATE
+            , DATEDIFF(CURRENT_DATE(), MAX(DT)) AS RECENCY
+            , COUNT(DT) AS FREQUENCY
+            , SUM(AMOUNT) AS MONETARY
+		FROM PURCHASE_LOG
+        GROUP BY USER_ID
+	)
+	, USER_RFM_RANK AS (
+		SELECT
+			USER_ID
+            , RECENT_DATE
+            , RECENCY
+            , FREQUENCY
+            , MONETARY
+            , CASE
+				WHEN RECENCY < 14 THEN 5
+                WHEN RECENCY < 28 THEN 4
+                WHEN RECENCY < 60 THEN 3
+                WHEN RECENCY < 90 THEN 2
+                ELSE 1
+			  END AS R
+            , CASE
+				WHEN 20 <= FREQUENCY THEN 5
+                WHEN 10 <= FREQUENCY THEN 5
+                WHEN 5 <= FREQUENCY THEN 5
+                WHEN 2 <= FREQUENCY THEN 5
+                ELSE 1
+			  END AS F
+			, CASE
+				WHEN 3000000 <= MONETARY THEN 5
+                WHEN 1000000 <= MONETARY THEN 5
+                WHEN 300000 <= MONETARY THEN 5
+                WHEN 50000 <= MONETARY THEN 5
+                ELSE 1
+			  END AS M
+		FROM USER_RFM
+	)
+SELECT
+	CONCAT('R', R) AS R_RANK
+    , COUNT(CASE WHEN F = 5 THEN 1 END) AS F_5
+    , COUNT(CASE WHEN F = 4 THEN 1 END) AS F_4
+    , COUNT(CASE WHEN F = 3 THEN 1 END) AS F_3
+    , COUNT(CASE WHEN F = 2 THEN 1 END) AS F_2
+    , COUNT(CASE WHEN F = 1 THEN 1 END) AS F_1
+FROM USER_RFM_RANK
+GROUP BY R
+ORDER BY R_RANK DESC;

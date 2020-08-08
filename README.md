@@ -9,7 +9,7 @@
 * [HackerRank](https://www.hackerrank.com/domains/sql?filters%5Bstatus%5D%5B%5D=unsolved&badge_type=sql) - 완료
   * SQL 레벨 5 뱃지 획득!!!
   * ![image](hackerrank/sqlbadge.png)
-* [Programmers](https://programmers.co.kr/learn/challenges?tab=sql_practice_kit) - 
+* [Programmers](https://programmers.co.kr/learn/challenges?tab=sql_practice_kit)
 
 - - - -
 

@@ -82,4 +82,6 @@
 - A AND (B OR C)
   - 계산 순서상 AND가 OR을 앞섬
 - SELECT절에서 CASE WHEN 시, ELSE가 없으면 조건에 만족하지 않는 값은 NULL로 반환
-  
+- LIMIT, OFFSET
+  - LIMIT 1 OFFSET 0 : 1번째 row부터 1개의 값 조회
+  - LIMIT 2 OFFSET 3 : 4번째 row부터 2개의 값 조회

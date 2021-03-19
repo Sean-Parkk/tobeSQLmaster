@@ -10,7 +10,7 @@
   * SQL 레벨 5 뱃지 획득!!!
   * ![image](hackerrank/sqlbadge.png)
 * [Programmers](https://programmers.co.kr/learn/challenges?tab=sql_practice_kit)
-
+* [LeetCode](https://leetcode.com/problems/)
 - - - -
 
 ## 공부 요약
@@ -58,7 +58,7 @@
     * inner join, 변수 선언 공부해서 풀어버림.
   * ![image](programmers/image.png)
 * 후기
-  * SQL 문제들을 풀어보면 SELECT에서 WEHRE, HAVING, ORDER 관련 문제가 많음
+  * SQL 문제들을 풀어보면 SELECT에서 WHERE, HAVING, ORDER 관련 문제가 많음
     * 간혹 JOIN 나오는 정도?
   * 실무에서는 어느정도의 쿼리를 자주 사용하는지 궁금함.
   

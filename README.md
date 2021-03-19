@@ -4,13 +4,13 @@
 ## SQL쿼리 작성 연습하기
 * 데이터 분석을 위한 SQL레시피(도서) 공부
   * 실무에서의 쿼리 능력 향상 위해 진행
-  * ![image](https://www.hanbit.co.kr/data/books/B8585882565_l.jpg){: width="40%" height="40%"}
+  * ![image](https://www.hanbit.co.kr/data/books/B8585882565_l.jpg)
   * [책 링크](https://www.hanbit.co.kr/store/books/look.php?p_code=B8585882565)
 * [HackerRank](https://www.hackerrank.com/domains/sql?filters%5Bstatus%5D%5B%5D=unsolved&badge_type=sql) - 완료
   * SQL 레벨 5 뱃지 획득!!!
-  * ![image](hackerrank/sqlbadge.png){: width="40%" height="40%"}
+  * ![image](hackerrank/sqlbadge.png)
 * [Programmers](https://programmers.co.kr/learn/challenges?tab=sql_practice_kit)
-
+* [LeetCode](https://leetcode.com/problems/)
 - - - -
 
 ## 공부 요약

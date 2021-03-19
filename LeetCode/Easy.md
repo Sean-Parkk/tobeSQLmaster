@@ -85,3 +85,67 @@ SELECT Name AS Customers
 FROM Customers
 WHERE Id NOT IN (SELECT CustomerId From Orders);
 ```
+
+## Delete Duplicate Emails
+- [링크](https://leetcode.com/problems/delete-duplicate-emails/)
+
+```SQL
+DELETE p1 
+FROM Person p1, Person p2
+WHERE
+    p1.Email = p2.Email AND p1.Id > p2.Id;
+```
+
+## Rising Temperature
+- [링크](https://leetcode.com/problems/rising-temperature/)
+
+```SQL
+SELECT w1.id
+FROM Weather w1
+Join Weather w2
+ON DATEDIFF(w1.recordDate, w2.recordDate) = 1
+AND w1.temperature > w2.temperature
+```
+
+## Big Countries
+- [링크](https://leetcode.com/problems/big-countries/)
+
+```SQL
+SELECT name, population, area
+FROM World
+WHERE area > 3000000
+    OR population > 25000000;
+```
+
+
+## Classes More Than 5 Students
+- [링크](https://leetcode.com/problems/classes-more-than-5-students/)
+
+```SQL
+SELECT class
+FROM courses
+GROUP BY class
+HAVING COUNT(DISTINCT student) >= 5;
+```
+
+## Not Boring Movies
+- [링크](https://leetcode.com/problems/not-boring-movies/)
+
+```SQL
+SELECT *
+FROM cinema
+WHERE description != 'boring'
+HAVING MOD(id, 2) = 1
+ORDER BY rating DESC;
+```
+
+## Swap Salary
+- [링크](https://leetcode.com/problems/swap-salary/)
+
+```SQL
+UPDATE Salary
+SET sex =
+CASE WHEN sex = 'm' THEN 'f' ELSE 'm' END
+```
+
+

@@ -78,6 +78,8 @@
   - 내림
 - IFNULL(COL, SUBSTR)
   - NULL일 경우, 치환
+- COALESCE(COL, DATA1, DATA2, (COL도 가능)...)
+  - NULL일 경우, 치환하는데 뒤에 열거된 순서대로 검토하며 NULL이 아닌 첫 번째 값으로 치환
 - SET @VAR = 1 변수 선언
 - A AND (B OR C)
   - 계산 순서상 AND가 OR을 앞섬
@@ -85,3 +87,16 @@
 - LIMIT, OFFSET
   - LIMIT 1 OFFSET 0 : 1번째 row부터 1개의 값 조회
   - LIMIT 2 OFFSET 3 : 4번째 row부터 2개의 값 조회
+- 와일드카드 LIKE '%, ?'
+  - %는 글자 제한 없고, ?는 한 글자
+    ```SQL
+    SELECT PRICE FROM PRODUCT 
+    WHERE NAME LIKE 'SE%'
+    ```
+    요렇게 하면 SE로 시작하는 어떤 단어도 다 가져옴
+- DATE FORMAT
+  - DATETIME 컬럼의 표기 형식을 바꿔줌
+    ```SQL
+    SELECT DATE_FORMAT(`DATE`, '%Y-%m-%d') AS `DATE` FROM SALES
+    ```
+    요렇게 하면 연-월-일 로 표기
